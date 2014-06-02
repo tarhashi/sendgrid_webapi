@@ -31,12 +31,9 @@ module Faraday
       end
     end
 
-    def call(env)
-      @app.call(env).on_complete do
-        check_status(env)
-        env[:body] = parse_body(env[:body])
-      end
+    def on_complete(env)
+      check_status(env)
+      env[:body] = parse_body(env[:body])
     end
-    
   end
 end
