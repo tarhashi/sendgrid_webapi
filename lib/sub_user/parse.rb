@@ -4,17 +4,22 @@ module SendGridWebApi::SubUserModules
     
     def get options = {}
       options.merge!({:task => "get"}) unless options[:task]
-      query_api(PARSE_URL, options)
+      query_post_api(PARSE_URL, options)
     end
 
     def set options = {}
       options.merge!({:task => "set"}) unless options[:task]
-      query_api(PARSE_URL, options)
+      query_post_api(PARSE_URL, options)
+    end
+
+    def update options = {}
+      options.merge!({:task => "update"}) unless options[:task]
+      query_post_api(PARSE_URL, options)
     end
 
     def delete options = {}
       options.merge!({:task => "delete"}) unless options[:task]
-      query_api(PARSE_URL, options)
+      query_post_api(PARSE_URL, options)
     end
   end
 end

@@ -7,12 +7,12 @@ module SendGridWebApi::Modules
 
     def set options = {}
       parse_email_set_url = "parse.set.json"
-      query_api(parse_email_set_url, options)
+      query_post_api(parse_email_set_url, options)
     end
 
     def delete options = {}
       parse_email_delete_url = "parse.delete.json"
-      query_api(parse_email_delete_url, options)
+      query_post_api(parse_email_delete_url, options)
     end
   end
 end
