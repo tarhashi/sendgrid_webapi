@@ -7,7 +7,11 @@ module SendGridWebApi::Modules
 
     def delete options = {}
       invalid_email_delete_url = "invalidemails.delete.json"
-      query_api(invalid_email_delete_url, options)
-    end    
+      query_post_api(invalid_email_delete_url, options)
+    end
+
+    def count options = {}
+      invalid_emails_count_url = "invalidemails.count.json"
+      query_api(invalid_emails_count_url, options)
   end
 end

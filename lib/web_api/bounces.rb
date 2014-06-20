@@ -7,7 +7,7 @@ module SendGridWebApi::Modules
 
     def delete options = {}
       bounce_delete_url = "bounces.delete.json"
-      query_api(bounce_delete_url, options)
+      query_post_api(bounce_delete_url, options)
     end
 
     def count options = {}

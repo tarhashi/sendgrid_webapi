@@ -3,7 +3,7 @@ module SendGridWebApi::SubUserModules
     
     def login options = {}
       auth_url = "apiv2/customer.auth.json"
-      query_api(auth_url, options)
+      query_post_api(auth_url, options)
     end
         
   end
