@@ -13,5 +13,6 @@ module SendGridWebApi::Modules
     def count options = {}
       invalid_emails_count_url = "invalidemails.count.json"
       query_api(invalid_emails_count_url, options)
+    end
   end
 end
