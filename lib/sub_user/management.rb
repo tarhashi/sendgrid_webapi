@@ -5,7 +5,7 @@ module SendGridWebApi::SubUserModules
       management_get_url = "apiv2/customer.profile.json"
       query_post_api(management_get_url, options)
     end
-  
+
     def add options = {}
       management_add_url = "apiv2/customer.add.json"
       query_post_api(management_add_url, options)
@@ -30,28 +30,33 @@ module SendGridWebApi::SubUserModules
       management_website_disable_url = "apiv2/customer.website_disable.json"
       query_post_api(management_website_disable_url, options)
     end
-  
+
     def update options = {}
       options.merge!(:task => "set") unless options[:task]
       management_update_url = "apiv2/customer.profile.json"
-      query_post_api(management_update_url, options)    
+      query_post_api(management_update_url, options)
     end
 
     def update_password options = {}
       management_set_password_url = "apiv2/customer.password.json"
-      query_post_api(management_set_password_url, options)    
+      query_post_api(management_set_password_url, options)
     end
 
     def update_username options = {}
       options.merge!({:task => "setUsername"}) unless options[:task]
       management_update_url = "apiv2/customer.profile.json"
-      query_post_api(management_update_url, options)    
+      query_post_api(management_update_url, options)
     end
 
     def update_email options = {}
       options.merge!({:task => "setEmail"}) unless options[:task]
       management_update_url = "apiv2/customer.profile.json"
-      query_post_api(management_update_url, options)    
+      query_post_api(management_update_url, options)
+    end
+
+    def delete options = {}
+      management_delete_url = "apiv2/customer.delete.json"
+      query_post_api(management_delete_url, options)
     end
   end
 end
